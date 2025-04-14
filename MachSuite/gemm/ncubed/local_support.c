@@ -1,5 +1,6 @@
 #include "gemm.h"
 #include <string.h>
+#include "photonTiming.h"
 
 int INPUT_SIZE = sizeof(struct bench_args_t);
 
@@ -7,7 +8,13 @@ int INPUT_SIZE = sizeof(struct bench_args_t);
 
 void run_benchmark( void *vargs ) {
   struct bench_args_t *args = (struct bench_args_t *)vargs;
+
+  unsigned int *start, *stop, *elapsed;
+  start = photonStartTiming();
   gemm( args->m1, args->m2, args->prod );
+  stop = photonEndTiming();
+  elapsed = photonReportTiming(start,stop);
+  photonPrintTiming(elapsed);
 }
 
 /* Input format:

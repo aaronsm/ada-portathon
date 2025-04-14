@@ -1,11 +1,18 @@
 #include "sort.h"
 #include <string.h>
+#include "photonTiming.h"
 
 int INPUT_SIZE = sizeof(struct bench_args_t);
 
 void run_benchmark( void *vargs ) {
   struct bench_args_t *args = (struct bench_args_t *)vargs;
+
+  unsigned int *start, *stop, *elapsed;
+  start = photonStartTiming();
   ms_mergesort( args->a );
+  stop = photonEndTiming();
+  elapsed = photonReportTiming(start,stop);
+  photonPrintTiming(elapsed);
 }
 
 /* Input format:

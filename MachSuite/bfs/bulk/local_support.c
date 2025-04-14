@@ -1,12 +1,19 @@
 #include "bfs.h"
 #include <string.h>
 #include <unistd.h>
+#include "photonTiming.h"
 
 int INPUT_SIZE = sizeof(struct bench_args_t);
 
 void run_benchmark( void *vargs ) {
   struct bench_args_t *args = (struct bench_args_t *)vargs;
+
+  unsigned int *start, *stop, *elapsed;
+  start = photonStartTiming();
   bfs(args->nodes, args->edges, args->starting_node, args->level, args->level_counts);
+  stop = photonEndTiming();
+  elapsed = photonReportTiming(start,stop);
+  photonPrintTiming(elapsed);
 }
 
 /* Input format:

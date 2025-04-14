@@ -6,8 +6,8 @@ CFLAGS?=-O3 -Wall -Wno-unused-label
 SRCS=$(KERN).c local_support.c ../../common/support.c
 FILES=$(SRCS) $(KERN).h ../../common/support.h
 
-$(KERN): $(FILES) ../../common/harness.c
-	$(CC) $(CFLAGS) -I../../common -o $(KERN) $(SRCS) ../../common/harness.c -lm
+$(KERN): $(FILES) ../../common/harness.c $(wildcard ../../includes/*.c)
+	$(CC) $(CFLAGS) -I../../common -o $(KERN) $(SRCS) ../../common/harness.c -I../../includes -I./includes $(wildcard ./includes/*.c) -lm
 
 run: $(KERN) input.data check.data
 	$(submit) ./$(KERN) input.data check.data

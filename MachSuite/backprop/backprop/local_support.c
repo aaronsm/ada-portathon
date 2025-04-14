@@ -1,5 +1,6 @@
 #include "backprop.h"
 #include <string.h>
+#include "photonTiming.h"
 
 int INPUT_SIZE = sizeof(struct bench_args_t);
 
@@ -7,9 +8,15 @@ int INPUT_SIZE = sizeof(struct bench_args_t);
 
 void run_benchmark( void *vargs ) {
   struct bench_args_t *args = (struct bench_args_t *)vargs;
+
+  unsigned int *start, *stop, *elapsed;
+  start = photonStartTiming();
   backprop( args->weights1, args->weights2, args->weights3,
             args->biases1,  args->biases2,  args->biases3,
             args->training_data, args->training_targets );
+  stop = photonEndTiming();
+  elapsed = photonReportTiming(start,stop);
+  photonPrintTiming(elapsed);
 }
 
 /* Input format:
