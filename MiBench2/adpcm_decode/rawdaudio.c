@@ -12,7 +12,11 @@
 
 short	sbuf[NSAMPLES];
 
+#if 1
+void app_main(void) {
+#else
 int main() {
+#endif
     struct adpcm_state state = {};
     int n = 0;
     unsigned char * currentN = test_data;

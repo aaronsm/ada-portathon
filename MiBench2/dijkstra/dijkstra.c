@@ -142,7 +142,11 @@ int dijkstra(int chStart, int chEnd)
     return 0;
 }
 
+#if 1
+void app_main(void) {
+#else
 int main(int argc, char *argv[]) {
+#endif
   int i,j;
 
    /* make a fully connected matrix */

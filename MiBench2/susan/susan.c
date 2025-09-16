@@ -1916,7 +1916,11 @@ if(n==MAX_CORNERS){
 corner_list[n].info=7;
 }
 
+#if 1
+void app_main(void) {
+#else
 int main() {
+#endif
 /* {{{ vars */
 
 char   *tcp;

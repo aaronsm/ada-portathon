@@ -44,6 +44,8 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ** - Changed some of the variable names to be more meaningful.
 */
 
+#pragma GCC diagnostic warning "-Wuninitialized"
+
 #include "adpcm.h"
 #include <stdio.h> /*DBG*/
 

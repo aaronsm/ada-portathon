@@ -25,9 +25,13 @@ int compare(const void *elem1, const void *elem2)
   return (distance1 > distance2) ? 1 : ((distance1 == distance2) ? 0 : -1);
 }
 
-
+#if 1
+void
+app_main(void) {
+#else
 int
 main(void) {
+#endif
   int i,count=0;
 
   for(count = 0; count < sizeof(array)/sizeof(struct my3DVertexStruct); ++count)

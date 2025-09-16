@@ -18,9 +18,12 @@
 
 #include "crc.h"
 
-
+#if 1
+void app_main(void)
+#else
 int
 main(void)
+#endif
 {
 	unsigned char  test[] = "123456789";
 

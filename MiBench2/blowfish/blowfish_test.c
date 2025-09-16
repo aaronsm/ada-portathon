@@ -23,7 +23,11 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 unsigned char KEY[] = "1234567890abcdeffedcba0987654321";
 
+#if 1
+void app_main(void) {
+#else
 int main(void) {
+#endif
   unsigned long L = 1, R = 2;
   BLOWFISH_CTX ctx;
 

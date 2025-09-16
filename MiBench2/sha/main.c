@@ -8,7 +8,11 @@
 #include "sha.h"
 #include "input.h"
 
+#if 1
+void app_main(void) {
+#else
 int main()
+#endif
 {
   SHA_INFO sha_info;
 

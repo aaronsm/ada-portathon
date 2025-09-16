@@ -17,8 +17,11 @@ static void test_encrypt_cbc(void);
 static void test_decrypt_cbc(void);
 
 
-
+#if 1
+void app_main(void)
+#else
 int main(void)
+#endif
 {
     test_encrypt_cbc();
     test_decrypt_cbc();

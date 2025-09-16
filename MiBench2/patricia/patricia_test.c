@@ -160,8 +160,13 @@ struct MyNode {
 	double bar;
 };
 
+#if 1
+void 
+app_main()
+#else
 int
 main()
+#endif
 {
 	struct ptree *phead;
 	struct ptree *p,*pfind;

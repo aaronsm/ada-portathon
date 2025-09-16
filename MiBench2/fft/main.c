@@ -11,7 +11,11 @@ unsigned MAXWAVES=4; //large has 8
 int old_main();
     
 // main for benchmark purposes that does fft and inverse fft
+#if 1
+void app_main() {
+#else
 int main() {
+#endif
     MAXSIZE = 1024;
     old_main();
     invfft = 1;

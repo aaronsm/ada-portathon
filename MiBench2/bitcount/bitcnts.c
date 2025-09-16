@@ -19,7 +19,11 @@
 
 static int CDECL bit_shifter(long int x);
 
+#if 1
+void app_main(void)
+#else
 int main(void)
+#endif
 {
   clock_t start, stop;
   double ct, cmin = DBL_MAX, cmax = 0;
