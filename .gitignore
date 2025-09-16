@@ -2,3 +2,4 @@
 CortexSuite/cortex/liblinear/data/100B/kdda
 CortexSuite/cortex/liblinear/data/10B/epsilon
 CortexSuite/cortex/sphinx/language_model/HUB4/model.DMP
+build/*
