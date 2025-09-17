@@ -162,7 +162,7 @@ struct MyNode {
 
 #if 1
 void 
-app_main()
+app_main(void)
 #else
 int
 main()
@@ -272,7 +272,7 @@ main()
 		//if(pfind->p_key==(addr.s_addr&pfind->p_m->pm_mask))
 		if(pfind->p_key==addr.s_addr)
 		{
-			printf("%f %08x: ", time, addr.s_addr);
+			printf("%f %08lx: ", time, addr.s_addr);
 			printf("Found.\n");
 		}
 		else

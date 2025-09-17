@@ -80,7 +80,7 @@ int old_main() {
 printf("ImagOut:\n");
  for (i=0;i<MAXSIZE;i++)
    printf("%f \t", ImagOut[i]);
-   printf("\n");
+ printf("\n");
 
  free(RealIn);
  free(ImagIn);

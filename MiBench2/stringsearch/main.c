@@ -71,7 +71,7 @@ char *strsearch(const char *string)
 #include <stdio.h>
 
 #if 1
-void app_main(void) {
+void app_main(void)
 #else
 int main()
 #endif

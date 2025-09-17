@@ -24,6 +24,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+ #pragma GCC diagnostic warning "-Wuninitialized"
+ 
 #include <math.h>
 // #include <signal.h>
 #include <stdio.h>
